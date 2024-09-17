@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./output/output.css">
+  </head>
+  <body class="bg-gray-100 flex flex-col min-h-screen">
+    <!-- Login Form -->
+    <div
+      id="loginContainer"
+      class="w-full max-w-md p-6 bg-white rounded-lg shadow-md mx-auto mt-10 form-container"
+    >
+      <h2 class="text-xl font-semibold mb-4">Login</h2>
+      <input
+        type="text"
+        id="username"
+        placeholder="Username"
+        class="block w-full p-2 mb-4 border border-gray-300 rounded-md focus:border-blue-500 focus:ring-blue-500"
+      />
+      <input
+        type="password"
+        id="password"
+        placeholder="Password"
+        class="block w-full p-2 mb-4 border border-gray-300 rounded-md focus:border-blue-500 focus:ring-blue-500"
+      />
+      <button
+        id="loginBtn"
+        class="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+      >
+        Login
+      </button>
+      <div id="loginMessage" class="mt-2 text-red-500"></div>
+      <button
+        id="showCreateAdminBtn"
+        class="w-full mt-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600"
+      >
+        Create Admin
+      </button>
+    </div>
+
+    <!-- Create Admin Form -->
+    <div
+      id="createAdminContainer"
+      class="w-full max-w-md p-6 bg-white rounded-lg shadow-md mx-auto mt-10 hidden form-container"
+    >
+      <h2 class="text-xl font-semibold mb-4">Create Admin</h2>
+      <input
+        type="text"
+        id="newUsername"
+        placeholder="New Username"
+        class="block w-full p-2 mb-4 border border-gray-300 rounded-md focus:border-blue-500 focus:ring-blue-500"
+      />
+      <input
+        type="password"
+        id="newPassword"
+        placeholder="New Password"
+        class="block w-full p-2 mb-4 border border-gray-300 rounded-md focus:border-blue-500 focus:ring-blue-500"
+      />
+      <button
+        id="createAdminBtn"
+        class="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+      >
+        Create Admin
+      </button>
+      <div id="createAdminMessage" class="mt-2 text-red-500"></div>
+      <button
+        id="showLoginBtn"
+        class="w-full mt-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600"
+      >
+        Back to Login
+      </button>
+    </div>
+
+    <!-- To-Do List App -->
+    <div
+      id="todoContainer"
+      class="w-full max-w-4xl p-6 bg-white rounded-lg shadow-md mx-auto mt-10 hidden"
+    >
+      <h1 class="text-2xl font-bold mb-4">To-Do List</h1>
+      <textarea
+        id="taskInput"
+        placeholder="Enter a new task"
+        class="block w-full p-3 mb-4 border border-gray-300 rounded-md focus:border-blue-500 focus:ring-blue-500 textarea-custom"
+      ></textarea>
+      <input
+        type="datetime-local"
+        id="taskDateTime"
+        class="block w-full p-2 mb-4 border border-gray-300 rounded-md focus:border-blue-500 focus:ring-blue-500"
+      />
+      <button
+        id="addTaskBtn"
+        class="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+      >
+        Add Task
+      </button>
+      <button
+        id="downloadBtn"
+        class="w-full py-2 bg-green-500 text-white rounded-md hover:bg-green-600 pdf-btn"
+      >
+        Download as PDF
+      </button>
+
+      <!-- Search Input -->
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search tasks..."
+        class="block w-full p-3 mb-4 border border-gray-300 rounded-md focus:border-blue-500 focus:ring-blue-500 search-input"
+      />
+
+      <table class="w-full mt-4 border-collapse">
+        <thead>
+          <tr class="bg-gray-200">
+            <th class="p-2 border">SL No.</th>
+            <th class="p-2 border">Task</th>
+            <th class="p-2 border">Time</th>
+            <th class="p-2 border">Author</th>
+            <th class="p-2 border">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="taskList"></tbody>
+      </table>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-4 mt-auto">
+      <div class="container mx-auto text-center">
+        <p class="mb-2">
+          All rights reserved. Design and developed by
+          <a
+            href="https://www.linkedin.com/in/engrsakib/"
+            target="_blank"
+            class="underline"
+            >Md. Nazmus Sakib</a
+          >
+        </p>
+        <p class="mb-2">
+          Connect with me on
+          <a
+            href="https://www.facebook.com/engrsakib02/"
+            target="_blank"
+            class="underline"
+            >Facebook</a
+          >
+          and
+          <a
+            href="https://www.linkedin.com/in/engrsakib/"
+            target="_blank"
+            class="underline"
+            >LinkedIn</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <!-- jsPDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.6.0/jspdf.umd.min.js"></script>
+    <script src="./script/dev.js">
+      
+    </script>
+  </body>
+</html>

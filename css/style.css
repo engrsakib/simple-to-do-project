@@ -1,0 +1,34 @@
+.completed {
+    text-decoration: line-through;
+    color: #888;
+  }
+  .action-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    position: relative;
+  }
+  .edit-btn,
+  .delete-btn {
+    width: 100%;
+  }
+  .edit-btn {
+    background-color: #3b82f6; /* Tailwind blue-500 */
+  }
+  .delete-btn {
+    background-color: #ef4444; /* Tailwind red-500 */
+  }
+  .textarea-custom {
+    resize: vertical;
+    min-height: 100px;
+  }
+  .search-input {
+    margin-bottom: 1rem;
+  }
+  .pdf-btn {
+    margin-top: 1rem;
+  }
+  .form-container {
+    margin-bottom: 2rem; /* Adjusted margin-bottom for spacing */
+  }
